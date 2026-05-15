@@ -1,14 +1,9 @@
 name: CI — Lint, Test & Build
 
-name: CI — Lint, Test & Build
-
 on:
   push:
     branches: [main]
-  push:
-    branches: [main]
   pull_request:
-    branches: [main]
     branches: [main]
 
 jobs:
@@ -50,15 +45,9 @@ jobs:
           MONGO_URI: mongodb://localhost:27017/gitnest_test
           JWT_SECRET: test_secret_for_ci
           NODE_ENV: test
-
   frontend:
     name: Frontend (React + Vite)
     runs-on: ubuntu-latest
-
-    defaults:
-      run:
-        working-directory: client
-
 
     defaults:
       run:
@@ -70,13 +59,7 @@ jobs:
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
         with:
-          node-version: 18
           node-version: 18
           cache: npm
           cache-dependency-path: client/package-lock.json
