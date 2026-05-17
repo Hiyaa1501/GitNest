@@ -51,7 +51,7 @@ export default function GitNestHomepage() {
             </div>
 
             {/* Navbar */}
-            <header className="sticky top-0 z-50 border-b border-white/5 backdrop-blur-xl bg-[#06070a]/80">
+            <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/5 backdrop-blur-xl bg-[#06070a]/80">
                 <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
                     <div className="flex items-center gap-3 cursor-pointer select-none">
                         <div className="w-11 h-11 rounded-2xl bg-white flex items-center justify-center overflow-hidden shadow-2xl shadow-emerald-500/20 border border-white/10 p-1">
