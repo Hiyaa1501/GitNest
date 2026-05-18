@@ -12,6 +12,7 @@ import userRoutes from './routes/user.routes.js';
 import healthRoute from './routes/health.route.js';
 import AppError from './utils/AppError.js';
 import errorHandler from './middleware/errorHandler.js';
+import repositoryRoutes from './routes/repository.routes.js';
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -26,6 +27,8 @@ app.use(mongoSanitize());
 app.use('/health', healthRoute);
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/users', userRoutes);
+app.use('/api/v1/repositories', repositoryRoutes);
+app.use(errorHandler);
 
 // 404 handler - must come after all routes
 app.use((req, res, next) => {
