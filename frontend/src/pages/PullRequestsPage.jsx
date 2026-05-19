@@ -81,9 +81,11 @@ export default function PullRequestsPage() {
   const filtered = MOCK_PRS.filter((pr) => {
     const matchesTab =
       activeTab === 'open' ? pr.status === 'open' : pr.status !== 'open';
+    const trimmedSearch = search.trim();
     const matchesSearch =
-      pr.title.toLowerCase().includes(search.toLowerCase()) ||
-      pr.author.toLowerCase().includes(search.toLowerCase());
+      !trimmedSearch ||
+      pr.title.toLowerCase().includes(trimmedSearch.toLowerCase()) ||
+      pr.author.toLowerCase().includes(trimmedSearch.toLowerCase());
     return matchesTab && matchesSearch;
   });
 
